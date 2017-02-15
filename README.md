@@ -7,6 +7,12 @@ Simple Spring Boot Initializr setup of Spring Cloud Config Server to demonstrate
 2. `java -jar target/config-server-0.0.1-SNAPSHOT.jar`
 3. `curl -vN 'http://localhost:8080/application/test:abc'`
 
+## Shorter path to reproduce issue:
+
+1. `mvn package`
+2. `java -Dspring.profiles.active=test:abc target/config-server-0.0.1-SNAPSHOT.jar`
+3. The application will never start but instead show the same exception as described below.
+
 ## Response:
 ```
 > GET /application/test:abc HTTP/1.1
